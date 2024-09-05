@@ -15,8 +15,8 @@ class WorkoutTimer: ObservableObject {
     // @Published var isFinished = false
     
     private var timer: Timer?
-    private var workDuration: TimeInterval = 30
-    private var restDuration: TimeInterval = 30
+    var workDuration: TimeInterval = 30
+    var restDuration: TimeInterval = 30
     private var isResting: Bool = false
     
     var displayTime: String {
@@ -43,6 +43,7 @@ class WorkoutTimer: ObservableObject {
     
     func pause() {
         guard isActive else { return }
+        workDuration = timeRemaining
         isActive = false
         isPaused = true
         timer?.invalidate()
@@ -53,6 +54,8 @@ class WorkoutTimer: ObservableObject {
         isActive = false
         isPaused = false
         timeRemaining = 0
+        workDuration = 30
+//        updateTimer()
         timer?.invalidate()
     }
     
