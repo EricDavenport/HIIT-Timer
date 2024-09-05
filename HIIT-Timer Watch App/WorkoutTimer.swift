@@ -55,7 +55,6 @@ class WorkoutTimer: ObservableObject {
         isPaused = false
         timeRemaining = 0
         workDuration = 30
-//        updateTimer()
         timer?.invalidate()
     }
     
@@ -68,7 +67,7 @@ class WorkoutTimer: ObservableObject {
             }
             isResting.toggle()
             // MARK: Haptic feedback -> May need to adjust depending on real feel during workout
-            WKInterfaceDevice.current().play(.success)
+            WKInterfaceDevice.current().play(.notification)
             return
         }
         timeRemaining -= 1
