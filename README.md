@@ -49,7 +49,9 @@ Language and Frameworks:
 ___
 #### Key Components:
 `WorkoutTimer`: Class: Manages all workout timing logic, including intervals, total elapsed time, and switching between work/rest periods.
+
 `ContentView`: Displays the current state of the timer and the controls for starting, pausing, and stopping the workout.
+
 `IntervalSettingsView`: Provides UI for adjusting the work and rest intervals and setting a total workout time.
 ___
 #### Core Features:
